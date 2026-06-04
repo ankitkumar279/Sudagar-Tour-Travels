@@ -104,6 +104,12 @@
   backdrop-filter: blur(8px);
 }
 
+.tour-location {
+  background: rgba(217, 164, 65, 0.35);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
 .tour-card h3 {
   color: #ffd54f;
   font-size: 30px;
