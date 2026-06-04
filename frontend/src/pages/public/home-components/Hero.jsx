@@ -3,7 +3,7 @@ function Hero({ scrollToBooking, scrollToCabs }) {
     <section className="hero">
       <div className="hero-shell">
         <div className="hero-content">
-          <span className="hero-badge">Private taxi service • Faridabad & Delhi NCR</span>
+          
 
           <h1>
             Travel That Feels <br />
