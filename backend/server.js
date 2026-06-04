@@ -22,17 +22,16 @@ app.get("/", (req, res) => {
   res.send("Taxi backend is running");
 });
 
-app.get("/test", (req, res) => {
+const testApi = (req, res) => {
   res.json({
     success: true,
     message: "Backend API working",
   });
-});
+};
 
-app.get("/db-test", async (req, res) => {
+const dbTestApi = async (req, res) => {
   try {
     const result = await pool.query("SELECT NOW()");
-
     res.json({
       success: true,
       message: "Database connected successfully",
@@ -44,16 +43,37 @@ app.get("/db-test", async (req, res) => {
       message: error.message,
     });
   }
-});
+};
+
+app.get("/test", testApi);
+app.get("/api/test", testApi);
+
+app.get("/db-test", dbTestApi);
+app.get("/api/db-test", dbTestApi);
 
 app.use("/auth", authRoutes);
+app.use("/api/auth", authRoutes);
+
 app.use("/bookings", bookingRoutes);
+app.use("/api/bookings", bookingRoutes);
+
 app.use("/customers", customerRoutes);
+app.use("/api/customers", customerRoutes);
+
 app.use("/cabs", cabRoutes);
+app.use("/api/cabs", cabRoutes);
+
 app.use("/tours", tourRoutes);
+app.use("/api/tours", tourRoutes);
+
 app.use("/offers", offerRoutes);
+app.use("/api/offers", offerRoutes);
+
 app.use("/enquiries", enquiryRoutes);
+app.use("/api/enquiries", enquiryRoutes);
+
 app.use("/dashboard", dashboardRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 
 if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 5000;
