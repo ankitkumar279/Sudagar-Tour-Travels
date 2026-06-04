@@ -84,9 +84,9 @@ function TourSection({ tours, tourLoading }) {
         </div>
       ) : (
         <div className="tour-slider-wrap">
-          <button className="tour-slide-btn left" onClick={slideLeft}>
-            ‹
-          </button>
+         <button className="tour-slide-btn left" onClick={slideLeft}>
+  ❬
+</button>
 
           <div className="tour-slider" ref={sliderRef}>
             {tours.map((tour) => (
@@ -95,8 +95,8 @@ function TourSection({ tours, tourLoading }) {
           </div>
 
           <button className="tour-slide-btn right" onClick={slideRight}>
-            ›
-          </button>
+  ❭
+</button>
         </div>
       )}
     </section>
