@@ -22,14 +22,14 @@ app.get("/", (req, res) => {
   res.send("Taxi backend is running");
 });
 
-app.get("/api/test", (req, res) => {
+app.get("/test", (req, res) => {
   res.json({
     success: true,
     message: "Backend API working",
   });
 });
 
-app.get("/api/db-test", async (req, res) => {
+app.get("/db-test", async (req, res) => {
   try {
     const result = await pool.query("SELECT NOW()");
 
@@ -46,14 +46,14 @@ app.get("/api/db-test", async (req, res) => {
   }
 });
 
-app.use("/api/auth", authRoutes);
-app.use("/api/bookings", bookingRoutes);
-app.use("/api/customers", customerRoutes);
-app.use("/api/cabs", cabRoutes);
-app.use("/api/tours", tourRoutes);
-app.use("/api/offers", offerRoutes);
-app.use("/api/enquiries", enquiryRoutes);
-app.use("/api/dashboard", dashboardRoutes);
+app.use("/auth", authRoutes);
+app.use("/bookings", bookingRoutes);
+app.use("/customers", customerRoutes);
+app.use("/cabs", cabRoutes);
+app.use("/tours", tourRoutes);
+app.use("/offers", offerRoutes);
+app.use("/enquiries", enquiryRoutes);
+app.use("/dashboard", dashboardRoutes);
 
 if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 5000;
