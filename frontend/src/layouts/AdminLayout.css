@@ -1,0 +1,159 @@
+.admin-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: #f4f4f4;
+}
+
+.admin-sidebar {
+  background: #111;
+  color: white;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.admin-logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-logo span {
+  width: 48px;
+  height: 48px;
+  background: #ffc400;
+  color: #111;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.admin-logo h2 {
+  color: #ffc400;
+  font-size: 18px;
+}
+
+.admin-logo p {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.close-sidebar {
+  display: none;
+  background: #ffc400;
+  border: none;
+  color: #111;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 45px;
+}
+
+.admin-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 15px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.admin-nav a:hover,
+.admin-nav a.active {
+  background: #ffc400;
+  color: #111;
+}
+
+.logout-btn {
+  background: #ffc400;
+  color: #111;
+  border: none;
+  padding: 14px;
+  border-radius: 40px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.admin-content {
+  padding: 28px;
+  min-width: 0;
+}
+
+.admin-topbar {
+  display: none;
+  background: #111;
+  color: white;
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-btn {
+  background: #ffc400;
+  color: #111;
+  border: none;
+  padding: 8px 13px;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-topbar {
+    display: flex;
+  }
+
+  .close-sidebar {
+    display: block;
+  }
+
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: -285px;
+    width: 280px;
+    height: 100vh;
+    z-index: 1001;
+    transition: 0.35s ease;
+  }
+
+  .admin-sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1000;
+  }
+
+  .admin-content {
+    padding: 14px;
+  }
+}

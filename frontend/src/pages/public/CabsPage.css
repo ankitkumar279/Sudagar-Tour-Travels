@@ -1,0 +1,677 @@
+.cabs-page-new {
+  min-height: 100vh;
+  background: #f4efe7;
+  overflow-x: hidden;
+}
+
+.cab-loading {
+  padding: 120px 6%;
+  text-align: center;
+}
+
+.cab-luxury-hero {
+  min-height: 92vh;
+  position: relative;
+  color: white;
+  padding: 90px 6%;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 45px;
+  align-items: center;
+  overflow: hidden;
+  background: #0b0b0b;
+}
+
+.cab-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(110deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.62)),
+    url("https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.08);
+  animation: heroBgMove 9s ease-in-out infinite alternate;
+}
+
+.cab-hero-content,
+.cab-hero-showcase {
+  position: relative;
+  z-index: 2;
+}
+
+.cab-hero-content {
+  animation: cabTextIn 1s ease both;
+}
+
+.cab-hero-content p,
+.section-small,
+.cab-panel-content > p:first-child,
+.cab-luxury-banner p {
+  color: #ffc400;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.cab-hero-content h1 {
+  font-size: clamp(44px, 7vw, 90px);
+  line-height: 0.95;
+  margin-bottom: 26px;
+}
+
+.cab-hero-content span {
+  display: block;
+  max-width: 560px;
+  color: #ececec;
+  font-size: 20px;
+  line-height: 1.75;
+  margin-bottom: 34px;
+}
+
+.cab-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.cab-hero-actions button,
+.cab-panel-content button {
+  background: #ffc400;
+  color: #111;
+  border: none;
+  padding: 16px 30px;
+  border-radius: 50px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.35s ease;
+}
+
+.cab-hero-actions button:hover,
+.cab-panel-content button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 35px rgba(255, 196, 0, 0.25);
+}
+
+.cab-hero-actions a {
+  color: white;
+  font-weight: 900;
+  text-decoration: none;
+  border-bottom: 2px solid #ffc400;
+  padding-bottom: 6px;
+}
+
+.cab-hero-showcase {
+  animation: cabImageIn 1s ease both;
+}
+
+.cab-hero-showcase img {
+  width: 100%;
+  max-width: 760px;
+  height: 420px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 42px;
+  box-shadow: none;
+}
+
+.cab-price-glass {
+  position: absolute;
+  left: -28px;
+  bottom: 45px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #111;
+  backdrop-filter: blur(14px);
+  border-radius: 26px;
+  padding: 22px 26px;
+  min-width: 230px;
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.35);
+  animation: floatingGlass 3s ease-in-out infinite;
+}
+
+.cab-price-glass small,
+.cab-price-glass b,
+.cab-price-glass strong {
+  display: block;
+}
+
+.cab-price-glass small {
+  color: #666;
+  font-weight: 900;
+}
+
+.cab-price-glass b {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.cab-price-glass strong {
+  color: #c49300;
+  font-size: 24px;
+}
+
+.cab-luxury-stats {
+  margin: -45px auto 0;
+  width: 88%;
+  position: relative;
+  z-index: 5;
+  background: white;
+  border-radius: 30px;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+}
+
+.cab-luxury-stats div {
+  text-align: center;
+  border-right: 1px solid #eee;
+}
+
+.cab-luxury-stats div:last-child {
+  border-right: none;
+}
+
+.cab-luxury-stats h2 {
+  color: #111;
+  font-size: clamp(28px, 4vw, 46px);
+  margin-bottom: 6px;
+}
+
+.cab-luxury-stats p {
+  color: #666;
+  font-weight: 800;
+}
+
+.cab-fleet-section {
+  padding: 100px 6%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(34px, 5vw, 64px);
+  color: #111;
+  max-width: 900px;
+  margin: 0 auto 45px;
+  line-height: 1.08;
+}
+
+.cab-luxury-selector {
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.cab-luxury-selector button {
+  background: white;
+  border: 2px solid transparent;
+  border-radius: 28px;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  transition: 0.35s ease;
+}
+
+.cab-luxury-selector button:hover,
+.cab-luxury-selector button.active {
+  transform: translateY(-8px);
+  border-color: #ffc400;
+}
+
+.cab-luxury-selector img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 22px;
+  margin-bottom: 14px;
+}
+
+.cab-luxury-selector span,
+.cab-luxury-selector small {
+  display: block;
+  padding: 0 8px;
+}
+
+.cab-luxury-selector span {
+  color: #111;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.cab-luxury-selector small {
+  color: #b88900;
+  font-weight: 900;
+  margin: 6px 0 8px;
+}
+
+.cab-feature-panel {
+  max-width: 1180px;
+  margin: auto;
+  background: white;
+  border-radius: 38px;
+  display: grid;
+  grid-template-columns: 48% 52%;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.14);
+  animation: cabPanelIn 0.7s ease both;
+}
+
+.cab-panel-image {
+  min-height: 470px;
+  background: #111;
+  overflow: hidden;
+}
+
+.cab-panel-image img {
+  width: 88%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+  transition: 0.7s ease;
+}
+
+.cab-feature-panel:hover .cab-panel-image img {
+  transform: scale(1.08);
+}
+
+.cab-panel-content {
+  padding: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cab-panel-content h3 {
+  font-size: clamp(34px, 5vw, 62px);
+  color: #111;
+  margin-bottom: 24px;
+}
+
+.cab-panel-tags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.cab-panel-tags span {
+  background: #111;
+  color: white;
+  padding: 11px 17px;
+  border-radius: 30px;
+  font-weight: 900;
+}
+
+.cab-panel-desc {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+.cab-panel-content button {
+  width: fit-content;
+}
+
+.cab-luxury-banner {
+  min-height: 420px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+    url("https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+  padding: 70px 6%;
+}
+
+.cab-luxury-banner h2 {
+  font-size: clamp(38px, 6vw, 78px);
+  max-width: 900px;
+  line-height: 1;
+}
+
+.cab-benefits {
+  padding: 90px 6%;
+  background: #111;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.cab-benefits div {
+  position: relative;
+  min-height: 420px;
+  border-radius: 34px;
+  overflow: hidden;
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.35);
+}
+
+.cab-benefits div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  z-index: 1;
+}
+
+.cab-benefits img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.6s ease;
+}
+
+.cab-benefits div:hover img {
+  transform: scale(1.1);
+}
+
+.cab-benefits span,
+.cab-benefits h3,
+.cab-benefits p {
+  position: relative;
+  z-index: 2;
+}
+
+.cab-benefits span {
+  width: 58px;
+  height: 58px;
+  background: #ffc400;
+  color: #111;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.cab-benefits h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.cab-benefits p {
+  color: #e5e5e5;
+  line-height: 1.6;
+}
+
+@keyframes heroBgMove {
+  from {
+    transform: scale(1.08) translateX(0);
+  }
+
+  to {
+    transform: scale(1.14) translateX(-20px);
+  }
+}
+
+@keyframes cabTextIn {
+  from {
+    opacity: 0;
+    transform: translateX(-45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cabImageIn {
+  from {
+    opacity: 0;
+    transform: translateX(55px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes floatingGlass {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes cabPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1050px) {
+  .cab-luxury-hero,
+  .cab-feature-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .cab-hero-showcase img {
+    height: 460px;
+  }
+
+  .cab-luxury-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cab-benefits {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 750px) {
+  .cab-luxury-hero {
+    min-height: auto;
+    padding: 70px 5%;
+  }
+
+  .cab-hero-content h1 {
+    font-size: 46px;
+  }
+
+  .cab-hero-content span {
+    font-size: 17px;
+  }
+
+  .cab-hero-showcase img {
+    height: 330px;
+    border-radius: 28px;
+  }
+
+  .cab-price-glass {
+    left: 15px;
+    bottom: 18px;
+  }
+
+  .cab-luxury-stats {
+    margin-top: 0;
+    width: 100%;
+    border-radius: 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cab-luxury-stats div {
+    border-right: none;
+  }
+
+  .cab-fleet-section {
+    padding: 75px 5%;
+  }
+
+  .cab-luxury-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .cab-panel-image {
+    min-height: 300px;
+  }
+
+  .cab-panel-content {
+    padding: 32px 24px;
+  }
+
+  .cab-luxury-banner {
+    background-attachment: scroll;
+  }
+
+  .cab-benefits {
+    padding: 70px 5%;
+  }
+
+  .cab-benefits div {
+    min-height: 360px;
+  }
+}
+
+.cab-open {
+  color: #168a16;
+  font-weight: 900;
+  padding: 0 8px 10px;
+  margin-top: 4px;
+}
+
+.cab-closed {
+  color: #d10000;
+  font-weight: 900;
+  padding: 0 8px 10px;
+  margin-top: 4px;
+}
+
+.cab-skeleton-container {
+  padding: 40px 6%;
+}
+
+.cab-skeleton-hero {
+  height: 500px;
+  border-radius: 30px;
+  margin-bottom: 50px;
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(
+    90deg,
+    #ececec 25%,
+    #f7f7f7 50%,
+    #ececec 75%
+  );
+  background-size: 1000px 100%;
+}
+
+.cab-skeleton-title {
+  width: 350px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 0 auto 40px;
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(
+    90deg,
+    #ececec 25%,
+    #f7f7f7 50%,
+    #ececec 75%
+  );
+  background-size: 1000px 100%;
+}
+
+.cab-skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.cab-skeleton-card {
+  background: white;
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.cab-skeleton-image {
+  height: 180px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(
+    90deg,
+    #ececec 25%,
+    #f7f7f7 50%,
+    #ececec 75%
+  );
+  background-size: 1000px 100%;
+}
+
+.cab-skeleton-line {
+  height: 18px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(
+    90deg,
+    #ececec 25%,
+    #f7f7f7 50%,
+    #ececec 75%
+  );
+  background-size: 1000px 100%;
+}
+
+.cab-skeleton-line.short {
+  width: 60%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .cab-skeleton-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cab-skeleton-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cab-skeleton-hero {
+    height: 280px;
+  }
+
+  .cab-skeleton-title {
+    width: 220px;
+  }
+}
