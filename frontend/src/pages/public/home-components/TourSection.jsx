@@ -60,11 +60,11 @@ function TourSection({ tours, tourLoading }) {
   const sliderRef = useRef(null);
 
   const slideLeft = () => {
-    sliderRef.current?.scrollBy({ left: -650, behavior: "smooth" });
+    sliderRef.current?.scrollBy({ left: -620, behavior: "smooth" });
   };
 
   const slideRight = () => {
-    sliderRef.current?.scrollBy({ left: 650, behavior: "smooth" });
+    sliderRef.current?.scrollBy({ left: 620, behavior: "smooth" });
   };
 
   return (
