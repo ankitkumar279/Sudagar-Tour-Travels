@@ -94,11 +94,14 @@
   margin-bottom: 12px;
   padding: 9px 14px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #d9b56d, #b88932);
-  color: white;
-  box-shadow: 0 8px 24px rgba(184, 137, 50, 0.35);
+
+  background: rgba(217, 164, 65, 0.65);
+
+  color: #15110b;
   font-size: 13px;
   font-weight: 900;
+
+  backdrop-filter: blur(8px);
 }
 
 .tour-card h3 {
