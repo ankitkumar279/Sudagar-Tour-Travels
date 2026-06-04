@@ -145,40 +145,46 @@ function AdminTours() {
           </div>
         </form>
 
-        <div className="tours-grid-admin">
-          {tours.map((tour) => (
-            <div className="tour-admin-card" key={tour.id}>
-              <div className="tour-image">
-                {tour.image_url ? <img src={tour.image_url} alt={tour.title} /> : <span>🧳</span>}
-              </div>
+       <div className="tours-grid-admin">
+  {tours.map((tour) => (
+    <div className="admin-tour-card" key={tour.id}>
+      <div className="admin-tour-image">
+        {tour.image_url ? (
+          <img src={tour.image_url} alt={tour.title} />
+        ) : (
+          <span>🧳</span>
+        )}
+      </div>
 
-              <div className="tour-content">
-                <div className="tour-top">
-                  {/* <h3>{tour.title}</h3> */}
-                  <span>{tour.availability ? "Available" : "Not Available"}</span>
-                </div>
-
-                <p className="tour-location">📍 {tour.location}</p>
-
-                <div className="tour-tags">
-                  <span>⏱ {tour.duration}</span>
-                  <span>₹{tour.price}</span>
-                </div>
-
-                <p className="tour-desc">{tour.description || "No description added."}</p>
-
-                <div className="tour-actions">
-                  <button onClick={() => handleEdit(tour)}>Edit</button>
-                  <button className="delete-btn" onClick={() => handleDelete(tour.id)}>
-                    Delete
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-
-          {tours.length === 0 && <div className="empty-box">No tours found</div>}
+      <div className="admin-tour-content">
+        <div className="admin-tour-top">
+          <h3>{tour.title}</h3>
+          <span>{tour.availability ? "Available" : "Not Available"}</span>
         </div>
+
+        <p className="admin-tour-location">📍 {tour.location}</p>
+
+        <div className="admin-tour-tags">
+          <span>⏱ {tour.duration}</span>
+          <span>₹{tour.price}</span>
+        </div>
+
+        <p className="admin-tour-desc">
+          {tour.description || "No description added."}
+        </p>
+
+        <div className="admin-tour-actions">
+          <button onClick={() => handleEdit(tour)}>Edit</button>
+          <button className="delete-btn" onClick={() => handleDelete(tour.id)}>
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  ))}
+
+  {tours.length === 0 && <div className="empty-box">No tours found</div>}
+</div>
       </div>
     </AdminLayout>
   );
