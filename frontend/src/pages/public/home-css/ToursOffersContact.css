@@ -704,9 +704,12 @@
   overflow: hidden;
 }
 
+.tour-card-open {
+  height: auto !important;
+}
+
 .tour-card-open .tour-desc-public {
-  max-height: 160px;
-  overflow-y: auto;
+  max-height: none;
 }
 
 .read-more-btn {
