@@ -667,9 +667,13 @@
   display: flex;
   gap: 26px;
   overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  padding: 10px 4px 25px;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.tour-slider::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 .tour-slider::-webkit-scrollbar {
