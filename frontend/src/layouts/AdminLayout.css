@@ -160,3 +160,26 @@
     padding: 14px;
   }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.admin-layout {
+  overflow-x: hidden;
+}
+
+.admin-content {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+}
