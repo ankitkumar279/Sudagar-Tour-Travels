@@ -177,7 +177,6 @@
   .tour-content {
     padding: 22px;
   }
-  
 
   .tour-card h3 {
     font-size: 25px;
@@ -661,6 +660,7 @@
   position: relative;
   max-width: 1220px;
   margin: auto;
+  padding: 0 55px;
 }
 
 .tour-slider {
@@ -678,30 +678,52 @@
 
 .tour-slider .tour-card {
   flex: 0 0 calc(50% - 13px);
+  min-height: 430px;
+  height: 430px;
   scroll-snap-align: start;
 }
 
+.tour-slider .tour-img {
+  width: 100%;
+  height: 430px;
+  min-height: 430px;
+}
+
+.tour-slider .tour-img img {
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+}
+
+.tour-content {
+  padding: 24px;
+}
+
 .tour-desc-public {
-  max-height: 120px;
+  max-height: 82px;
   overflow: hidden;
 }
 
 .tour-card-open .tour-desc-public {
-  max-height: none;
+  max-height: 160px;
+  overflow-y: auto;
 }
 
 .read-more-btn {
-  width: auto !important;
+  width: fit-content !important;
   height: auto !important;
   padding: 8px 18px !important;
-  margin: 8px 0 6px !important;
-  background: white !important;
+  margin: 6px 0 4px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
   color: #111 !important;
   font-size: 13px !important;
+  display: inline-flex !important;
 }
 
 .explore-tour-btn {
-  margin-top: 10px;
+  height: 50px !important;
+  margin-top: 8px !important;
 }
 
 .tour-slide-btn {
@@ -709,36 +731,60 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 20;
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 80px;
   border: none;
-  border-radius: 50%;
-  background: #ffc400;
-  color: #111;
-  font-size: 34px;
+  border-radius: 18px;
+  background: rgba(17, 17, 17, 0.45);
+  color: white;
+  font-size: 42px;
   font-weight: 900;
   cursor: pointer;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
 }
 
 .tour-slide-btn.left {
-  left: -22px;
+  left: 0;
 }
 
 .tour-slide-btn.right {
-  right: -22px;
+  right: 0;
 }
 
 @media (max-width: 900px) {
+  .tour-slider-wrap {
+    padding: 0 42px;
+  }
+
   .tour-slider .tour-card {
     flex: 0 0 100%;
+    height: 420px;
+    min-height: 420px;
+  }
+
+  .tour-slider .tour-img,
+  .tour-slider .tour-img img {
+    height: 420px;
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 520px) {
+  .tour-slider-wrap {
+    padding: 0 10px;
+  }
+
+  .tour-slide-btn {
+    width: 38px;
+    height: 62px;
+    font-size: 32px;
   }
 
   .tour-slide-btn.left {
-    left: 8px;
+    left: 4px;
   }
 
   .tour-slide-btn.right {
-    right: 8px;
+    right: 4px;
   }
 }
