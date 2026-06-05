@@ -28,7 +28,7 @@ function Footer() {
 
       <div>
         <h3>Contact Us</h3>
-        <p>📞 +91 800-5-800</p>
+        <p>📞 +91 7678680381 / 9810169445 </p>
         <p>📍 Faridabad, Haryana</p>
         <p>✉️ sudagartours@gmail.com</p>
       </div>
